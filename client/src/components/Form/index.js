@@ -4,16 +4,16 @@ function Form({ handleInputChange, handleFormSubmit, q }) {
   return (
     <form>
       <div className="form-group">
-        <label className="BookSearchLabel" for="q">Book</label>
+        <label for="q">Book</label>
         <input className="form-control"
+          placeholder="Ready Player One"
           value={q}
           type="text"
           name="q"
-          placeholder="Ready Player One"
           onChange={handleInputChange}
         />
       </div>
-      <button type="submit" className="submitBtn btn btn-danger" onClick={handleFormSubmit}>
+      <button type="submit" className="btn btn-danger float-right" onClick={handleFormSubmit}>
         Search
       </button>
     </form>

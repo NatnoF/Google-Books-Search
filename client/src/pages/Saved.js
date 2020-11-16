@@ -1,4 +1,3 @@
-const { Component } = require("react");
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
@@ -35,7 +34,7 @@ class Saved extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-12">g
+          <Col size="md-12">
             <Jumbotron>
               <h1 className="text-center">
                 <strong>(React) Google Books Search</strong>
@@ -51,16 +50,16 @@ class Saved extends Component {
                 <List>
                   {this.state.books.map(book => (
                     <Book 
-                      key={book.id}
-                      title={book.volumeInfo.title}
-                      subtitle={book.volumeInfo.subtitle}
-                      link={book.volumeInfo.infoLink}
-                      authors={book.volumeInfo.authors.join(", ")}
-                      description={book.volumeInfo.description}
-                      image={book.volumeInfo.imageLinks.thumbnail}
+                      key={book.googleId}
+                      title={book.title}
+                      subtitle={book.subtitle}
+                      link={book.link}
+                      authors={book.authors.join(", ")}
+                      description={book.description}
+                      image={book.image}
                       Button={() => (
                         <button
-                          onClick={() => this.handleBookDelete(book.id)}
+                          onClick={() => this.handleBookDelete(book.googleId)}
                           className="btn btn-danger ml-2"
                         >
                           Delete
